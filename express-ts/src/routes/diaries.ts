@@ -1,13 +1,14 @@
-import { Router } from "express";
+import { Router } from 'express'
+import * as diaryService from '../services/diary'
 
-const router = Router();
+const router = Router()
 
 router.get('/', (_req, res) => {
-    res.send('Buscando diarios');
+  res.json(diaryService.getEntriesWithoutSensitiveInfo())
 })
 
 router.post('/', (_req, res) => {
-    res.send('Creando un diario');
+  res.send('Creando un diario')
 })
 
-export default router;
+export default router
