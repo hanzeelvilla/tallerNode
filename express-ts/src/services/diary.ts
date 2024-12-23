@@ -1,4 +1,4 @@
-import { DiaryEntry, NonSensitiveInfoDiaryEntry } from '../types'
+import { DiaryEntry, NonSensitiveInfoDiaryEntry, newDiaryEntry } from '../types'
 import diaryData from './diaries.json'
 
 // Prioridadad de las importaciones: tsx, ts, , node, d.ts, json
@@ -35,4 +35,12 @@ const diariesWithoutSensitiveInfo: NonSensitiveInfoDiaryEntry[] = getEntriesWith
 diariesWithoutSensitiveInfo[0].comment // Error: La propiedad 'comment' no existe en el tipo 'NonSensitiveInfoDiaryEntry'
 */
 
-export const addEntry = (): undefined => undefined
+export const addDiary = (newDiaryEntry: newDiaryEntry): DiaryEntry => {
+  const newDiary = {
+    id: diaries.length + 1,
+    ...newDiaryEntry
+  }
+
+  diaries.push(newDiary)
+  return newDiary
+}

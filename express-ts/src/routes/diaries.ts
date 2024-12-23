@@ -12,8 +12,15 @@ router.get('/:id', (req, res) => {
   res.json(diary)
 })
 
-router.post('/', (_req, res) => {
-  res.send('Creando un diario')
+router.post('/', (req, res) => {
+  const { date, weather, visibility, comment } = req.body
+  const newDiaryEntry = diaryService.addDiary({
+    date,
+    weather,
+    visibility,
+    comment
+  })
+  res.json(newDiaryEntry)
 })
 
 export default router

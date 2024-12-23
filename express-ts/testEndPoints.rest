@@ -1,0 +1,21 @@
+# GET
+GET http://localhost:3000/api/diaries
+
+###
+
+# FIND BY ID
+GET http://localhost:3000/api/diaries/1
+
+###
+
+# CREATE A NEW DIARY
+
+POST http://localhost:3000/api/diaries
+Content-Type: application/json
+
+{
+    "date": "12-23-2024",
+    "weather": "cloudy",
+    "visibility": "good",
+    "comment": "Such a lonley day and it's mine"
+}
