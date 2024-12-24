@@ -19,3 +19,17 @@ Content-Type: application/json
     "visibility": "good",
     "comment": "Such a lonley day and it's mine"
 }
+
+###
+
+# CREATE A NEW DIARY FAIL
+
+POST http://localhost:3000/api/diaries
+Content-Type: application/json
+
+{
+    "date": true,
+    "weather": "eso tilin",
+    "visibility": "slim shady",
+    "comment": "Such a lonley day and it's mine"
+}
