@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es2015",               // El estándar de JavaScript a generar
+    "module": "commonjs",             // Tipo de módulo usado
+    "rootDir": "./src",               // Directorio raíz de los archivos TypeScript
+    "outDir": "./build",              // Directorio de salida para los archivos compilados
+    "strict": true,                   // Activa todas las verificaciones estrictas de tipo
+    "esModuleInterop": true,          // Mejora la compatibilidad con módulos CommonJS
+    "skipLibCheck": true,             // Omite la verificación de archivos de declaración
+    "forceConsistentCasingInFileNames": true // Enforce case-sensitive imports
+  },
+  "include": ["src/**/*"],            // Incluye todos los archivos .ts dentro de /src
+  "exclude": ["node_modules", "build"] // Excluye node_modules y la carpeta de salida
+}
