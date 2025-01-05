@@ -6,7 +6,7 @@
 - [x] Tipos
 - [x] Interfaces
 - [x] asincronia
-- [] ENUMS
+- [x] ENUMS
 - [] Clases, modificadores de accesso y objetos
 - [] Uniones
 - [] Algo mas?

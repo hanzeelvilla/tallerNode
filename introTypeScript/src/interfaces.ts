@@ -6,6 +6,11 @@
     - Comun para datos que se envian/reciben por una API
 */
 type genero = "masculino" | "femenino" | "otro";
+enum Genero {
+    Masculino = "masculino",
+    Femenino = "femenino",
+    Otro = "otro"
+}
 interface Persona {
     /*
         propiedad1: tipo,
@@ -15,6 +20,7 @@ interface Persona {
     nombre: string,
     edad: number,
     // genero: genero
+    // genero: Genero
     apellido: string,
     casado: boolean,
     hobbies: string[]
@@ -29,6 +35,8 @@ const hanzeel: Persona = {
     id: "1",
     nombre: "Hanzeel",
     edad: 20,
+    // genero: "masculino",
+    // genero: Genero.Masculino,
     apellido: "Villa",
     casado: false,
     hobbies: ["Jugar videojuegos", "Escuchar música", "Ver anime"],
@@ -86,3 +94,14 @@ const hanzeelProgramador: Programador = {
 
 let randomLenguaje: string = hanzeelProgramador.lenguajes[Math.floor(Math.random() * hanzeelProgramador.lenguajes.length)];
 console.log(`${hanzeelProgramador.nombre} está ${hanzeelProgramador.programar(randomLenguaje)}`);
+
+// MAS SOBRE TIPOS E INTERFACES
+
+// Omit<Tipo, Claves>
+// Pick<Tipo, Claves>
+// Partial<Tipo>
+// Required<Tipo>
+type PersonaSinHobbies = Omit<Persona, "hobbies"> // omitr propiedades
+type PerosonaTinder = Pick<Persona, "nombre" | "edad" | "hobbies"> // seleccionar propiedades
+type PersonaOpcional = Partial<Persona> // todas las propiedades son opcionales
+type PersonaEstricta = Required<Persona> // todas las propiedades son requeridas
